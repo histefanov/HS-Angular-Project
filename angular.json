@@ -15,7 +15,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "hs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -30,7 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/fonts/typography.css"
             ],
             "scripts": []
           },
