@@ -2,7 +2,7 @@
     width: calc(100% - 20rem);
     max-width: 1280px;
     margin: 0 auto;
-    padding-top: 1.5rem;
+    padding: 1.5rem 0;
     font-family: "Raleway", sans-serif;
 }
 
@@ -22,6 +22,7 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 2rem;
+    color: #403d3c;
     transition: 400ms;
 }
 
