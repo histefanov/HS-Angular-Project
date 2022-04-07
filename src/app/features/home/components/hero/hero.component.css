@@ -6,8 +6,62 @@
     min-height: 500px;
 }
 
+.hero__tagline-wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    left: 125px;
+}
+
+.hero__tagline {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    line-height: 10rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 7.5rem;
+    font-weight: 600;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+}
+
+.hero__tagline span {
+    display: block;
+}
+
+.hero__tagline span:last-child {
+    text-align: right;
+}
+
+.hero__content-wrapper {
+    position: absolute;
+    right: 200px;
+    top: 120px;
+    font-family: "Raleway", sans-serif;
+    color: #fff;
+}
+
+.hero__heading {
+    letter-spacing: 6px;
+    font-weight: bold;
+    font-size: 8rem;
+}
+
+.hero__link {
+    display: inline-block;
+    margin-top: 2.5rem;
+    padding: 1rem 2rem;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    /* background-color: #ff3052; */
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .hero__img {
     position: absolute;
+    z-index: 0;
     bottom: 0;
     left: 125px;
     height: 650px;
