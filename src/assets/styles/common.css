@@ -1,0 +1,12 @@
+.button--red {
+    border: 2px solid #ff3052;
+    border-radius: 3rem;
+    background-color: #ff3052; 
+    color: #fff;
+    transition: 200ms;
+}
+
+.button--red:hover {
+    background-color: #fff;
+    color: #ff3052;
+}
