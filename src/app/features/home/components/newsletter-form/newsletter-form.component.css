@@ -1,12 +1,44 @@
+.newsletter-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3rem 0;
+    margin-bottom: 20rem;
+    background-color: #f5f5f5;
+}
+
+.newsletter__slogan-wrapper {
+    position: relative;
+}
+
+.newsletter__slogan-wrapper::before {
+    content: "-HS-";
+    position: absolute;
+    top: 46%;
+    left: 43%;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color:#575757;
+}
+
+.newsletter__slogan {
+    animation: rotation 16s infinite linear;
+}
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
 .newsletter {
     display: flex;
     align-items: center;
     gap: 5rem;
-
-    position: absolute;
-    z-index: 2;
-    bottom: -220px;
-    right: 50px;
 
     padding: 3rem;
     background-color: #fff;
