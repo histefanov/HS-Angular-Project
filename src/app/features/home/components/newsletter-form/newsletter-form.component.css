@@ -1,10 +1,10 @@
-.newsletter-wrapper {
+.newsletter {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 3rem 0;
     margin-bottom: 20rem;
-    background-color: #f5f5f5;
+    background-color: #eceef4;
 }
 
 .newsletter__slogan-wrapper {
@@ -15,7 +15,7 @@
     content: "-HS-";
     position: absolute;
     top: 46%;
-    left: 43%;
+    left: 27%;
     font-family: "Raleway", sans-serif;
     font-size: 1.6rem;
     font-weight: bold;
@@ -23,6 +23,7 @@
 }
 
 .newsletter__slogan {
+    width: 70%;
     animation: rotation 16s infinite linear;
 }
   
@@ -35,14 +36,14 @@
     }
   }
 
-.newsletter {
+.newsletter__inner {
     display: flex;
     align-items: center;
     gap: 5rem;
 
     padding: 3rem;
     background-color: #fff;
-    border: 1px solid #575757;
+    /* border: 1px solid #575757; */
     border-radius: 0.5rem;
     font-family: "Raleway", sans-serif;
 }

@@ -10,3 +10,13 @@
     background-color: #fff;
     color: #ff3052;
 }
+
+.button--dark {
+    background-color: #000;
+    color: #fff;
+    transition: 0.2s;
+}
+
+.button--dark:hover {
+    background-color: rgb(41, 41, 41);
+}

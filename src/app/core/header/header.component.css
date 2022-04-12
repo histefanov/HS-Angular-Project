@@ -1,8 +1,17 @@
+.header {
+    position: fixed;
+    z-index: 999;   
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+}
+
 .header__inner {
     width: calc(100% - 20rem);
     max-width: 1280px;
     margin: 0 auto;
-    padding: 1.5rem 0;
+    padding: 0.8rem 0;
     font-family: "Raleway", sans-serif;
 }
 
@@ -22,7 +31,7 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 2rem;
-    color: #403d3c;
+    color: #cacaca;
     transition: 400ms;
 }
 
@@ -62,7 +71,7 @@
     letter-spacing: 0.5px;
     word-spacing: 2px;
     text-transform: uppercase;
-    color: #403d3c;
+    color: #cacaca;
     transition: 200ms;
     line-height: 2.5rem;
 }
@@ -72,5 +81,5 @@
 }
 
 .header__separator {
-    border-left: 1px solid #000;
+    border-left: 1px solid #cacaca;
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeroComponent } from './components/hero/hero.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewsletterFormComponent } from './components/newsletter-form/newsletter-form.component';
+import { ServicesComponent } from './components/services/services.component';
 
 
 
@@ -10,7 +11,8 @@ import { NewsletterFormComponent } from './components/newsletter-form/newsletter
   declarations: [
     HeroComponent,
     HomeComponent,
-    NewsletterFormComponent
+    NewsletterFormComponent,
+    ServicesComponent
   ],
   imports: [
     CommonModule
