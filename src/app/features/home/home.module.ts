@@ -4,6 +4,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewsletterFormComponent } from './components/newsletter-form/newsletter-form.component';
 import { ServicesComponent } from './components/services/services.component';
+import { TrainersComponent } from './components/trainers/trainers.component';
 
 
 
@@ -12,7 +13,8 @@ import { ServicesComponent } from './components/services/services.component';
     HeroComponent,
     HomeComponent,
     NewsletterFormComponent,
-    ServicesComponent
+    ServicesComponent,
+    TrainersComponent
   ],
   imports: [
     CommonModule

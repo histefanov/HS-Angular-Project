@@ -1,0 +1,101 @@
+.trainers {
+    padding: 5rem 0;
+    background-color: #000;
+}
+
+.trainers__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+
+.trainers__cards {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.trainers__column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.trainers__column:nth-child(1) > .trainers__card:nth-child(1) {
+    height: 300px;
+    width: 300px;
+    background-image: url("../../../../../assets/images/trainer-male.jpg");
+    background-size: cover;
+}
+
+.trainers__column:nth-child(1) > .trainers__card:nth-child(2) {
+    height: 160px;
+    width: 300px;
+    background-image: url("../../../../../assets/images/trainer-female.jpg");
+    background-size: cover;
+}
+
+.trainers__column:nth-child(2) > .trainers__card:nth-child(1) {
+    height: 160px;
+    width: 300px;
+    background-image: url("../../../../../assets/images/trainer-female.jpg");
+    background-size: cover;
+}
+
+.trainers__column:nth-child(2) > .trainers__card:nth-child(2) {
+    height: 300px;
+    width: 300px;
+    background-image: url("../../../../../assets/images/trainer-male.jpg");
+    background-size: cover;
+}
+
+.trainers__card {
+    position: relative;
+}
+
+
+.trainers__pop-up {
+    position: absolute;
+    z-index: -10;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    
+    background-color: red;
+}
+
+.trainers__card:hover > .trainers__pop-up {
+    top: 80%;
+    transition: 175ms ease-in-out;
+    z-index: 1;
+}
+
+.trainers__name {
+    color: #fff;
+}
+
+.trainers__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: 25%;
+    gap: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    color: #fff;
+}
+
+.trainers__heading {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.trainers__description {
+    color: #cacaca;
+    line-height: 1.2;
+}
+
+.trainers__link {
+    padding: 1rem 2rem;
+    text-align: center;
+}

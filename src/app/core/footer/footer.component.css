@@ -1,0 +1,39 @@
+.footer {
+    padding: 3rem 0;
+    background-color: #000;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+}
+
+.footer__heading {
+    margin-bottom: 1rem;
+    color: #858585;
+}
+
+.footer__link {
+    color: #fff;
+}
+
+.footer__inner {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.footer__sections {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer__description {
+    flex-basis: 20%;
+}
+
+.footer__sections > * {
+    
+}
+
+.footer__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

@@ -14,12 +14,18 @@
     font-family: "Raleway", sans-serif;
 }
 
+.services__subheading {
+    color: #ff3052;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 .services__heading {
     font-size: 2.4rem;
     font-weight: bold;
 }
 
-.services__subheading {
+.services__description {
     font-size: 1.2rem;
     line-height: 1.2;
 }

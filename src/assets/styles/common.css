@@ -20,3 +20,12 @@
 .button--dark:hover {
     background-color: rgb(41, 41, 41);
 }
+
+.button--light {
+    background-color: #fff;
+    transition: 200ms;
+}
+
+.button--light:hover {
+    background-color: rgb(201, 201, 201);
+}
