@@ -1,0 +1,33 @@
+.about {
+    margin-top: 68px;
+    font-family: "Raleway", sans-serif;
+    line-height: 1.5;
+}
+
+.about__inner {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.about__heading-wrapper {
+    padding: 2rem 0;
+}
+
+.about__heading {
+    text-align: center;
+    color: var(--red-color)
+}
+
+.about__description-wrapper {
+    display: flex;
+    gap: 3rem;
+}
+
+.about__description {
+    flex-basis: 50%;
+}
+
+.about__description--flex {
+    display: flex;
+    flex-direction: column;
+}

@@ -15,7 +15,7 @@
 }
 
 .services__subheading {
-    color: #ff3052;
+    color: var(--red-color);
     text-transform: uppercase;
     letter-spacing: 2px;
 }

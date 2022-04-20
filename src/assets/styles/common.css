@@ -1,14 +1,18 @@
+:root {
+    --red-color: #c43b5c;
+}
+
 .button--red {
-    border: 2px solid #ff3052;
+    border: 2px solid var(--red-color);
     border-radius: 3rem;
-    background-color: #ff3052; 
+    background-color: var(--red-color); 
     color: #fff;
     transition: 200ms;
 }
 
 .button--red:hover {
     background-color: #fff;
-    color: #ff3052;
+    color: var(--red-color);
 }
 
 .button--dark {

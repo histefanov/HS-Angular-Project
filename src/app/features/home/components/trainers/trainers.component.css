@@ -62,7 +62,7 @@
     right: 0;
     padding: 1rem;
     
-    background-color: red;
+    background-color: var(--red-color);
 }
 
 .trainers__card:hover > .trainers__pop-up {
