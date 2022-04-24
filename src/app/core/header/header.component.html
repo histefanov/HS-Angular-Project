@@ -1,34 +1,72 @@
 <header class="header">
     <div class="header__inner">
         <div class="header__main">
-            <div class="header__logo">
-                <a routerLink="/">-Logo-</a>
-            </div>
+
             <div class="header__nav">
                 <ul class="header__nav-list">
-                    <li class="header__nav-item">
-                        <a routerLink="/about">About</a>
+
+                    <li>
+                        <ul class="header__nav-items header__nav-items--left">
+                            <li class="header__nav-item">
+                                <div class="header__logo">
+                                    <a routerLink="/">-Logo-</a>
+                                </div>
+                            </li>
+                            <li class="header__nav-item">
+                                <a routerLink="/about">About</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="#">
+                                    Services
+                                </a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a routerLink="/blog">Blog</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="header__nav-item">
-                        <a href="#">
-                            Services
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="#">Blog</a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="#">Contact us</a>
-                    </li>
-                    <div class="header__separator"></div>
-                    <li class="header__nav-item header__nav-item--squared">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    </li>
-                    <li class="header__nav-item header__nav-item--squared">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    </li>
-                    <li class="header__nav-item header__nav-item--squared">
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <!-- <li>
+                        <ul class="header__nav-items header__nav-items--center">
+                            <li class="header__nav-item">
+                                <a routerLink="/login">Sign in</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a routerLink="/register">Register</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <!-- <li>
+                        <div class="header__separator"></div>
+                    </li> -->
+                    <li>
+                        <ul class="header__nav-items header__nav-items--right">
+                            <li class="header__nav-item header__nav-item--squared">
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                            <li class="header__nav-item header__nav-item--squared">
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            </li>
+                            <li class="header__nav-item header__nav-item--squared">
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <div class="header__separator"></div>
+                            </li>
+                            <div *ngIf="auth.afAuth.authState | async as user; else showLogin">
+                                <span>Hello, User.</span>
+                                <li class="header__nav-item">
+                                    <a>Logout</a>
+                                </li>
+                            </div>
+                            <ng-template #showLogin>
+                                <li class="header__nav-item">
+                                    <a routerLink="/login">Sign in</a>
+                                </li>
+                                <li class="header__nav-item">
+                                    <a routerLink="/register">Register</a>
+                                </li>
+                            </ng-template>
+                        </ul>
                     </li>
                 </ul>
             </div>

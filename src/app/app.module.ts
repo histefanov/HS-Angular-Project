@@ -7,20 +7,35 @@ import { CoreModule } from './core/core.module';
 import { HomeModule } from './features/home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { BlogModule } from './features/blog/blog.module';
+
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from '../environments/environment';
+import { UserModule } from './features/user/user.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent
+    AboutComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule,
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    HomeModule
+    UserModule,
+    HomeModule,
+    BlogModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

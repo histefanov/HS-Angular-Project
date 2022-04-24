@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "hs-angular-app-c0564"
+  },
+  "targets": {
+    "hs-angular-app-c0564": {
+      "hosting": {
+        "hs-app": [
+          "hs-angular-app-c0564"
+        ]
+      }
+    }
+  }
+}
