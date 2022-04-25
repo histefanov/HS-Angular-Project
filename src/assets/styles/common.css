@@ -33,3 +33,7 @@
 .button--light:hover {
     background-color: rgb(201, 201, 201);
 }
+
+.pointer {
+    cursor: pointer;
+}

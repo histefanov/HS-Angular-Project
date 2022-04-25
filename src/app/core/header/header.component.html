@@ -52,12 +52,10 @@
                             <li>
                                 <div class="header__separator"></div>
                             </li>
-                            <div *ngIf="auth.afAuth.authState | async as user; else showLogin">
-                                <span>Hello, User.</span>
-                                <li class="header__nav-item">
-                                    <a>Logout</a>
-                                </li>
-                            </div>
+                            <li class="header__nav-item" *ngIf="auth.afAuth.authState | async as user; else showLogin">
+                                <span class="header__greeting">Hello, User.</span>
+                                <a class="pointer" (click)="auth.logout()">Logout</a>
+                            </li>
                             <ng-template #showLogin>
                                 <li class="header__nav-item">
                                     <a routerLink="/login">Sign in</a>
