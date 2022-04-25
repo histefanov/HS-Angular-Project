@@ -1,36 +1,46 @@
-<form #form="ngForm" class="form" (ngSubmit)="registerHandler(form)">
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" #emailInput="ngModel" ngModel required email>
+<section class="register">
+    <div class="register__inner">
+        <div class="register__header">
+
+        </div>
     </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" #passwordInput="ngModel" ngModel required [minlength]="6">
+    <div class="login__form-wrapper">
+        <form #form="ngForm" class="form" (ngSubmit)="registerHandler(form)">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" #emailInput="ngModel" ngModel required email>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" #passwordInput="ngModel" ngModel required
+                    [minlength]="6">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm password</label>
+                <input type="password" name="confirmPassword" id="confirm-password" #confirmPasswordInput="ngModel"
+                    ngModel required [minlength]="6" hsEqualValue="password">
+            </div>
+            <button [disabled]="form.invalid">Register</button>
+            <div class="errors">
+                <ul class="errors__list" *ngIf="emailInput.invalid && emailInput.touched">
+                    <li *ngIf="emailInput.errors?.required" class="errors__item">
+                        Email is required.
+                    </li>
+                    <li *ngIf="emailInput.errors?.email" class="errors__item">
+                        Email is invalid.
+                    </li>
+                </ul>
+                <ul class="errors__list" *ngIf="passwordInput.invalid && passwordInput.touched">
+                    <li *ngIf="passwordInput.errors?.minlength" class="errors__item">
+                        Password must be at least 6 characters long.
+                    </li>
+                </ul>
+                <ul class="errors__list" *ngIf="confirmPasswordInput.invalid && confirmPasswordInput.touched">
+                    <li *ngIf="confirmPasswordInput.errors?.equalValue" class="errors__item">
+                        Password and confirm password do not match.
+                    </li>
+                </ul>
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="confirm-password">Confirm password</label>
-        <input type="password" name="confirmPassword" id="confirm-password" #confirmPasswordInput="ngModel" ngModel
-            required [minlength]="6" hsEqualValue="password">
-    </div>
-    <button [disabled]="form.invalid">Register</button>
-    <div class="errors">
-        <ul class="errors__list" *ngIf="emailInput.invalid && emailInput.touched">
-            <li *ngIf="emailInput.errors?.required" class="errors__item">
-                Email is required.
-            </li>
-            <li *ngIf="emailInput.errors?.email" class="errors__item">
-                Email is invalid.
-            </li>
-        </ul>
-        <ul class="errors__list" *ngIf="passwordInput.invalid && passwordInput.touched">
-            <li *ngIf="passwordInput.errors?.minlength" class="errors__item">
-                Password must be at least 6 characters long.
-            </li>
-        </ul>
-        <ul class="errors__list" *ngIf="confirmPasswordInput.invalid && confirmPasswordInput.touched">
-            <li *ngIf="confirmPasswordInput.errors?.equalValue" class="errors__item">
-                Password and confirm password do not match.
-            </li>
-        </ul>
-    </div>
-</form>
+</section>

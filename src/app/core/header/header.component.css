@@ -15,12 +15,8 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.header__main {
-    
-}
-
-.header__nav {
-    
+.header__logo {
+    margin-right: 3rem;
 }
 
 .header__logo > a {

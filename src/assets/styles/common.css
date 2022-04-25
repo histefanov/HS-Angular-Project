@@ -26,6 +26,7 @@
 }
 
 .button--light {
+    border: none;
     background-color: #fff;
     transition: 200ms;
 }

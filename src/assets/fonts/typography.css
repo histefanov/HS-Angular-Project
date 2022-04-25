@@ -13,3 +13,19 @@
      font-stretch: 75% 125%;
      font-style: oblique 0deg 20deg;
 }
+
+/* @font-face {
+     font-family: 'Open Sans';
+     src: url('./OpenSans/OpenSans-VariableFont_wdth\,wght.ttf');
+     font-weight: 125 950;
+     font-stretch: 75% 125%;
+     font-style: oblique 0deg 20deg;
+}
+
+@font-face {
+     font-family: 'Open Sans-Italic';
+     src: url('./OpenSans/OpenSans-Italic-VariableFont_wdth\,wght.ttf');
+     font-weight: 125 950;
+     font-stretch: 75% 125%;
+     font-style: oblique 0deg 20deg;
+} */
