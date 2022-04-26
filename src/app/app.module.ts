@@ -16,7 +16,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
 import { UserModule } from './features/user/user.module';
-import { EqualValueDirective } from './shared/directives/equal-value/equal-value.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { EqualValueDirective } from './shared/directives/equal-value/equal-value
     SharedModule,
     UserModule,
     HomeModule,
-    BlogModule
+    BlogModule,
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 })

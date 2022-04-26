@@ -6,7 +6,19 @@ import { GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
   providedIn: 'root'
 })
 export class AuthenticationService {
-  constructor(public afAuth: AngularFireAuth) { }
+  authState: any = null;
+
+  constructor(public afAuth: AngularFireAuth) {
+    this.afAuth.authState.subscribe(data => this.authState = data);
+  }
+
+  get authenticated(): boolean {
+    return this.authState !== null;
+  }
+
+  get currentUserId(): string {
+    return this.authenticated ? this.authState.uid : null;
+  }
 
   loginWithGoogle() {
     return this.authLogin(new GoogleAuthProvider());
@@ -34,14 +46,13 @@ export class AuthenticationService {
     return !!user;
   }
 
-  private authLogin(provider: GoogleAuthProvider) {
-    return this.afAuth
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log('success!')
-      })
-      .catch((error) => {
-        console.log('error');
-      })
+  private async authLogin(provider: GoogleAuthProvider | FacebookAuthProvider) {
+    try {
+      const result = await this.afAuth
+        .signInWithPopup(provider);
+      console.log('success!');
+    } catch (error) {
+      console.log('error');
+    }
   }
 }

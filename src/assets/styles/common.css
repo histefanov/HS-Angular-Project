@@ -51,8 +51,9 @@
     border: none;
     border-bottom: 1px solid grey;
     background-color: #000;
-    color: grey;
+    color: #fff;
     font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .auth__btn {
@@ -60,6 +61,13 @@
     font-size: 1.1rem;
 }
 
+.auth__btn:disabled {
+    cursor: not-allowed;
+    background-color: grey;;
+}
+
 .auth__errors {
     color: var(--red-color);
+    margin-top: 1rem;
+    font-family: "Montserrat", sans-serif;
 }

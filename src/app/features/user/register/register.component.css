@@ -11,7 +11,7 @@
     max-width: 328px;
 }
 
-.register__header {
+.register__header, .register__footer {
     text-align: center;
     font-family: "Montserrat", sans-serif;
 }
@@ -35,6 +35,17 @@
     color: #cacaca;
 }
 
-.register__subheading .register__link:hover {
+.register__footer {
+    margin: 1.5rem 0;
+    color: #fff;
+    text-align: center;
+}
+
+.register__login a {
+    color: #cacaca;
+    text-decoration: underline;
+}
+
+.register__login a:hover {
     color: #fff;
 }
