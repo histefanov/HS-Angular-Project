@@ -21,6 +21,18 @@ export class LoginComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl']
   }
 
+  googleLoginHandler() {
+    this.authService.loginWithGoogle().then(user => {
+      this.redirect();
+    });
+  }
+
+  facebookLoginHandler() {
+    this.authService.loginWithFacebook().then(user => {
+      this.redirect();
+    });
+  }
+
   loginHandler(form: NgForm): void {
     if (form.invalid) {
       return;
@@ -29,12 +41,16 @@ export class LoginComponent implements OnInit {
     const email = form.controls['email'].value;
     const password = form.controls['password'].value;
 
-    this.authService.login(email, password).then(user => {
-      if (this.returnUrl) {
-        this.router.navigateByUrl(this.returnUrl)
-      } else {
-        this.router.navigate(['/']);
-      }
+    this.authService.loginWithEmail(email, password).then(user => {
+      this.redirect();
     });
+  }
+
+  private redirect(): void {
+    if (this.returnUrl) {
+      this.router.navigateByUrl(this.returnUrl)
+    } else {
+      this.router.navigate(['/']);
+    }
   }
 }

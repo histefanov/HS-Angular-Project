@@ -38,29 +38,3 @@
 .login__subheading .login__link:hover {
     color: #fff;
 }
-
-.login__form {
-}
-
-.login__btn, .login__form-group, .login__input {
-    width: 100%;
-    max-width: 328px;
-}
-
-.login__input {
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 1px solid grey;
-    color: grey;
-    background-color: #000;
-    margin-bottom: 1rem;
-    height: 54px;
-}
-
-.login__btn {
-    height: 54px;
-}
-
-.login__errors {
-    color: var(--red-color);
-}

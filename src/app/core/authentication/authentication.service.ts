@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,15 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 export class AuthenticationService {
   constructor(public afAuth: AngularFireAuth) { }
 
-  login(email: string, password: string) {
+  loginWithGoogle() {
+    return this.authLogin(new GoogleAuthProvider());
+  }
+
+  loginWithFacebook() {
+    return this.authLogin(new FacebookAuthProvider());
+  }
+
+  loginWithEmail(email: string, password: string) {
     return this.afAuth.signInWithEmailAndPassword(email, password);
   }
 
@@ -23,5 +32,16 @@ export class AuthenticationService {
   async userIsLoggedIn() {
     const user = await this.afAuth.currentUser;
     return !!user;
+  }
+
+  private authLogin(provider: GoogleAuthProvider) {
+    return this.afAuth
+      .signInWithPopup(provider)
+      .then((result) => {
+        console.log('success!')
+      })
+      .catch((error) => {
+        console.log('error');
+      })
   }
 }

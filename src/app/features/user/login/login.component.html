@@ -8,32 +8,43 @@
                 <a class="login__link" routerLink="/register">Sign up for free</a>
             </p>
         </div>
-        <div class="login__form-wrapper">
-            <form #form="ngForm" class="login__form" (ngSubmit)="loginHandler(form)">
-                <div class="login__form-group">
+        <div class="login__alts">
+            <button class="login__google auth__btn button--light pointer" (click)="googleLoginHandler()">
+                Log in with Google
+            </button>
+            <button class="login__fb auth__btn button--light pointer" (click)="facebookLoginHandler()">
+                Log in with Facebook
+            </button>
+        </div>
+        <div class="auth__form-wrapper">
+            <form #form="ngForm" class="auth__form" (ngSubmit)="loginHandler(form)">
+                <div class="auth__form-group">
                     <!-- <label for="email">Email</label> -->
-                    <input class="login__input" type="text" name="email" id="email" placeholder="Email"
+                    <input class="auth__input" type="text" name="email" id="email" placeholder="Email"
                         #emailInput="ngModel" ngModel required email>
                 </div>
-                <div class="login__form-group">
+                <div class="auth__form-group">
                     <!-- <label for="password">Password</label> -->
-                    <input class="login__input" type="password" name="password" id="password" placeholder="Password"
+                    <input class="auth__input" type="password" name="password" id="password" placeholder="Password"
                         #passwordInput="ngModel" ngModel required [minlength]="6">
                 </div>
-                <button class="login__btn button--light">Log in</button>
-                <div class="login__errors" *ngIf="emailInput.invalid && emailInput.touched">
-                    <ul class="login__error-list">
-                        <li *ngIf="emailInput.errors?.['required']" class="errors__item">
+                <button class="auth__btn button--light pointer">
+                    Log in
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <div class="auth__errors" *ngIf="emailInput.invalid && emailInput.touched">
+                    <ul class="auth__error-list">
+                        <li *ngIf="emailInput.errors?.['required']" class="auth__error">
                             Email is required.
                         </li>
-                        <li *ngIf="emailInput.errors?.['email']" class="errors__item">
+                        <li *ngIf="emailInput.errors?.['email']" class="auth__error">
                             Email is invalid.
                         </li>
                     </ul>
                 </div>
-                <div class="login__errors" *ngIf="passwordInput.invalid && passwordInput.touched">
-                    <ul class="login__errors-list">
-                        <li *ngIf="passwordInput.errors?.['minlength']" class="errors__item">
+                <div class="auth__errors" *ngIf="passwordInput.invalid && passwordInput.touched">
+                    <ul class="auth__errors-list">
+                        <li *ngIf="passwordInput.errors?.['minlength']" class="auth__error">
                             Password must be at least 6 characters long.
                         </li>
                     </ul>

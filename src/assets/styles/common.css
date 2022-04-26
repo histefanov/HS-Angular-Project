@@ -38,3 +38,28 @@
 .pointer {
     cursor: pointer;
 }
+
+.auth__btn, .auth__form-group, .auth__input {
+    width: 100%;
+    max-width: 328px;
+}
+
+.auth__input {
+    margin-bottom: 1rem;
+    height: 54px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid grey;
+    background-color: #000;
+    color: grey;
+    font-size: 1.1rem;
+}
+
+.auth__btn {
+    height: 54px;
+    font-size: 1.1rem;
+}
+
+.auth__errors {
+    color: var(--red-color);
+}
