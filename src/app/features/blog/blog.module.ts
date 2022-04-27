@@ -5,18 +5,24 @@ import { PostsDashboardComponent } from './components/posts-dashboard/posts-dash
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { BlogRoutingModule } from './blog-routing.module';
 import { RouterModule } from '@angular/router';
+import { MaterialModule } from 'src/app/material.module';
+import { FormsModule } from '@angular/forms';
+import { PostCardComponent } from './components/post-card/post-card.component';
 
 
 @NgModule({
   declarations: [
     PostsListComponent,
     PostDetailsComponent,
-    PostsDashboardComponent
+    PostsDashboardComponent,
+    PostCardComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
     BlogRoutingModule,
-    RouterModule
+    RouterModule,
+    MaterialModule
   ]
 })
 export class BlogModule { }

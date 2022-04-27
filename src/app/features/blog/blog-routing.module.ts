@@ -10,12 +10,13 @@ const routes: Routes = [
     component: PostsListComponent
   },
   {
-    path: 'blog/:id',
-    component: PostDetailsComponent
+    path: 'blog/dashboard',
+    pathMatch: 'full',
+    component: PostsDashboardComponent
   },
   {
-    path: 'blog/dashboard',
-    component: PostsDashboardComponent
+    path: 'blog/:id',
+    component: PostDetailsComponent
   }
 ];
 

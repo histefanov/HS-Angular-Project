@@ -1,0 +1,19 @@
+.dashboard {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.dashboard__input {
+    width: 100%;
+}
+
+.dashboard__img-container {
+    max-height: 600px;
+}
+
+.dashboard__uploaded-img {
+    width: 100%; /* or any custom size */
+    height: 100%; 
+    object-fit: contain;
+}
