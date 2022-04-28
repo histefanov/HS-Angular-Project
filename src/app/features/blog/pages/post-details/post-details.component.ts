@@ -16,7 +16,6 @@ export class PostDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPost();
-    console.log(this);
   }
 
   getPost() {

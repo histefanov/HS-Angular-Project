@@ -7,18 +7,17 @@ import { BlogRoutingModule } from './blog-routing.module';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/material.module';
 import { FormsModule } from '@angular/forms';
-import { PostCardComponent } from './components/post-card/post-card.component';
-
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
-    PostsListComponent,
     PostDetailsComponent,
     PostsDashboardComponent,
-    PostCardComponent
+    PostsListComponent
   ],
   imports: [
     CommonModule,
+    SharedModule,
     FormsModule,
     BlogRoutingModule,
     RouterModule,

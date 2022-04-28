@@ -1,5 +1,59 @@
-<div *ngIf="post">
-    <h3>{{post.title}}</h3>
-    <p>Posted by: {{post.author}} &bull; {{post.published}}</p>
-    <p>{{post.content}}</p>
-</div>
+<article class="post" *ngIf="post">
+    <div class="post__inner">
+        <div class="post__header">
+            <h3 class="post__category">Training</h3>
+            <h2 class="post__heading">{{post.title}}</h2>
+            <div class="post__img-wrapper">
+                <img class="post__img" [src]="post.image" alt="{{post.title}}">
+            </div>
+        </div>
+        <div class="post__content">
+            <div class="post__side-buttons">
+                <button mat-icon-button>
+                    <i class="fa-brands fa-facebook" style="color: #4267B2"></i>
+                </button>
+                <button mat-icon-button>
+                    <i class="fa-brands fa-twitter" style="color: #1DA1F2"></i>
+                </button>
+                <button mat-icon-button>
+                    <i class="fa-solid fa-copy"></i>
+                </button>
+            </div>
+            <div class="post__content-header">
+                <h3 class="post__subtitle">
+                    Shift your at-home training up a gear.
+                </h3>
+                <span class="post__info">
+                    <span>{{post.author}}</span>
+                    &bull;
+                    <span>{{post.published.toDate() | date: 'dd MMMM yyyy'}}</span>
+                    &bull;
+                    <span>
+                        <i class="fa-solid fa-clock"></i>
+                        2 min read
+                    </span>
+                </span>
+            </div>
+            <div class="post__content-main">
+                <p class="post__paragraph">
+                    The biggest obstacle when it comes to working out at home are all the distractions that threaten to
+                    cut your workout short. Whether it’s family, errands or Netflix, there are more things at home to
+                    throw you off your game than anywhere else. To get the most from an at home session, you need to
+                    minimize distractions. That could mean pausing notifications on your phone, telling family members
+                    to leave you in peace or turning off your computer.
+                    One of the hardest parts about getting in shape isn’t completing your workout, but starting it in
+                    the first place. It’s one thing to say you’re going to stick to your training schedule, but it’s
+                    another thing to actually do it. That‘s why it‘s important to develop a healthy sense of
+                    accountability, and this can even be done from home with the support of the Freeletics Community.
+                    Training as part of a community will also help you to bond with people who have similar goals,
+                    sharing in the experience and making it even more enjoyable, even from your own home.
+                    Allocating part of a room as your fitness space is a great way to make sure you get the most out of
+                    at home workouts. First, you’ll have everything you need in one spot, so you’ll waste less time
+                    looking for your equipment and more time working out. Ideally, this space should become synonymous
+                    with working out and working hard, a spot you go to regularly with limited distractions and where
+                    family members know to leave you be.
+                </p>
+            </div>
+        </div>
+    </div>
+</article>

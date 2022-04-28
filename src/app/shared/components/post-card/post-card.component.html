@@ -1,0 +1,13 @@
+<article class="card pointer" routerLink="/blog/{{post.id}}">
+    <div class="card__img-wrapper" style="background-image: url({{post.image}});">
+        <!-- <img class="card__img" src="{{post.image}}" alt="{{post.title}}"> -->
+    </div>
+    <div class="card__content-wrapper">
+        <h3 class="card__category">
+            Training
+        </h3>
+        <h2 class="card__heading pointer">{{post.title}}</h2>
+
+    </div>
+    <p class="card__author">Author: {{post.author}}</p>
+</article>

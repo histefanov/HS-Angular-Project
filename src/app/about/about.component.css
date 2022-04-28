@@ -15,7 +15,10 @@
 
 .about__heading {
     text-align: center;
-    color: var(--red-color)
+    color: var(--red-color);
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .about__description-wrapper {

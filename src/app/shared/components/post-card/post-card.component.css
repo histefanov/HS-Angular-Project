@@ -1,17 +1,3 @@
-.posts {
-    background-color: #f3f3f3;
-}
-
-.posts__inner {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: auto;
-    grid-gap: 1.5rem;
-    margin: 0 auto;
-    max-width: 95%;
-    padding: 5rem 8rem;
-}
-
 .card {
     position: relative;
     background-color: #fff;

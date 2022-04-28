@@ -4,11 +4,11 @@ import { BlogService } from 'src/app/features/blog/blog.service';
 import { Post } from 'src/app/features/blog/models/post';
 
 @Component({
-  selector: 'hs-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'hs-blog',
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.css']
 })
-export class HomeComponent implements OnInit {
+export class BlogComponent implements OnInit {
 
   posts: Observable<Post[]>
 

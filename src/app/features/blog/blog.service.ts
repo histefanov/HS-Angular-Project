@@ -16,6 +16,18 @@ export class BlogService {
       ref.orderBy('published', 'desc'));
   }
 
+  //refactor
+
+  getLatestPosts() {
+    return this.postsCollection.snapshotChanges()
+      .pipe(map(actions =>
+        actions.slice(0, 3).map(a => {
+          const data = a.payload.doc.data() as Post;
+          const id = a.payload.doc.id;
+          return { id, ...data }
+        })));
+  }
+
   getPosts() {
     return this.postsCollection.snapshotChanges()
       .pipe(map(actions =>

@@ -1,0 +1,11 @@
+<section class="blog">
+    <h2 class="blog__heading">Learn more about fitness &amp; health</h2>
+    <div class="blog__posts">
+        <hs-post-card class="blog__card" *ngFor="let post of posts | async" [post]="post"></hs-post-card>
+    </div>
+    <div class="blog__btn-wrapper">
+        <button routerLink="/blog" class="blog__btn button--dark pointer">
+            <span>Read more on our blog</span>
+            <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+</section>

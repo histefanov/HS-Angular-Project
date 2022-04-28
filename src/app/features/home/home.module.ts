@@ -5,7 +5,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { NewsletterFormComponent } from './components/newsletter-form/newsletter-form.component';
 import { ServicesComponent } from './components/services/services.component';
 import { TrainersComponent } from './components/trainers/trainers.component';
-
+import { SharedModule } from 'src/app/shared/shared.module';
+import { BlogComponent } from './components/blog/blog.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -14,10 +16,13 @@ import { TrainersComponent } from './components/trainers/trainers.component';
     HomeComponent,
     NewsletterFormComponent,
     ServicesComponent,
-    TrainersComponent
+    TrainersComponent,
+    BlogComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
+    RouterModule
   ],
   exports: [
     HomeComponent
