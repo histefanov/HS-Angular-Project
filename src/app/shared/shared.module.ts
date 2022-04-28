@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { EqualValueDirective } from './directives/equal-value/equal-value.directive';
 import { RouterModule } from '@angular/router';
 import { PostCardComponent } from './components/post-card/post-card.component';
+import { MaterialModule } from '../material.module';
 
 @NgModule({
   declarations: [
@@ -11,11 +12,13 @@ import { PostCardComponent } from './components/post-card/post-card.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MaterialModule
   ],
   exports: [
     EqualValueDirective,
-    PostCardComponent
+    PostCardComponent,
+    MaterialModule
   ]
 })
 export class SharedModule { }

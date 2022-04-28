@@ -2,4 +2,8 @@
 @import url("./assets/styles/common.css");
 @import url("./assets/fonts/typography.css");
 @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
-body { font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

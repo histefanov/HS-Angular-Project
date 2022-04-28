@@ -4,7 +4,7 @@
 
 .posts__inner {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-auto-rows: auto;
     grid-gap: 1.5rem;
     margin: 0 auto;
@@ -12,58 +12,3 @@
     padding: 5rem 8rem;
 }
 
-.card {
-    position: relative;
-    background-color: #fff;
-    transition: 0.15s;
-}
-
-.card:hover {
-    transform: translateX(-0.15em) translateY(-0.15em);
-    -webkit-box-shadow: 5px 5px 15px -3px rgba(0,0,0,0.3); 
-    box-shadow: 5px 5px 15px -3px rgba(0,0,0,0.3);
-}
-
-.card__img-wrapper {
-    height: 200px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.card__img {
-    width: 100%;
-    object-fit: contain;
-}
-
-.card__content-wrapper {
-    position: relative;
-    padding: 1rem;
-}
-
-.card__category {
-    color: var(--red-color);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-.card__heading {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin: 1rem 0 2rem 0;
-}
-
-.card__author {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    color: grey;
-}
-
-.card__delete-btn {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-}

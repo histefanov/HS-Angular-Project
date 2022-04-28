@@ -45,12 +45,20 @@
 
 .post__side-buttons {
     display: flex;
-    flex-direction: column;
     gap: 0.5rem;
     position: absolute;
+    color: rgb(114, 114, 114);
+}
+
+.post__side-buttons--left {
+    flex-direction: column;
     top: 0;
     left: 0;
-    color: rgb(114, 114, 114);
+}
+
+.post__side-buttons--right {
+    top: 0;
+    right: 0;
 }
 
 .post__side-buttons i {
@@ -91,4 +99,25 @@
     margin: 0 auto;
     line-height: 1.4;
     font-size: 1.2rem;
+}
+
+.editor {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.editor__inner {
+    border-radius: 4px;
+    background-color: #424242;
+    padding: 1rem 1.5rem;
+}
+
+.editor__input {
+    width: 100%;
+    color: #fff;
+}
+
+.editor__input textarea {
+    white-space: pre-wrap;
 }

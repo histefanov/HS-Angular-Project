@@ -1,13 +1,18 @@
-<article class="card pointer" routerLink="/blog/{{post.id}}">
-    <div class="card__img-wrapper" style="background-image: url({{post.image}});">
+<article class="card">
+    <div class="card__img-wrapper pointer" routerLink="/blog/{{post.id}}"
+        style="background-image: url({{post.image}});">
         <!-- <img class="card__img" src="{{post.image}}" alt="{{post.title}}"> -->
     </div>
     <div class="card__content-wrapper">
         <h3 class="card__category">
             Training
         </h3>
-        <h2 class="card__heading pointer">{{post.title}}</h2>
-
+        <h2 class="card__heading pointer" routerLink="/blog/{{post.id}}">{{post.title}}</h2>
     </div>
     <p class="card__author">Author: {{post.author}}</p>
+    <div class="card__actions" *ngIf="auth.currentUserId === post.authorId">
+        <button mat-icon-button (click)="delete(post.id)">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+    </div>
 </article>

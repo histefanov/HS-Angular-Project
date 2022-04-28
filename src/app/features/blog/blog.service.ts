@@ -53,8 +53,8 @@ export class BlogService {
     return this.getPost(id).update(formData);
   }
 
-  delete(id: string) {
-    return this.getPost(id).delete();
+  delete(id: string | undefined) {
+    return this.getPost(id as string | null).delete();
   }
 
   private getPost(id: string | null) {

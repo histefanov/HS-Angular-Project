@@ -5,6 +5,7 @@ import { AuthenticationService } from 'src/app/core/authentication/authenticatio
 import { BlogService } from '../../blog.service';
 import { Post } from '../../models/post';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'hs-posts-dashboard',
@@ -24,6 +25,7 @@ export class PostsDashboardComponent implements OnInit {
   downloadURL: Observable<string>;
 
   constructor(
+    private router: Router,
     private authService: AuthenticationService,
     private blogService: BlogService,
     private storage: AngularFireStorage) { }
@@ -46,7 +48,7 @@ export class PostsDashboardComponent implements OnInit {
     this.title = '';
     this.content = '';
     this.btnText = 'Success!';
-    setTimeout(() => (this.btnText = 'Create Post'), 2000);
+    setTimeout(() => (this.router.navigate(['/blog'])), 2000);
   }
 
   async uploadImage(event: any) {

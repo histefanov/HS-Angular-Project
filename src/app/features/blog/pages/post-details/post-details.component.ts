@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 import { BlogService } from '../../blog.service';
 import { Post } from '../../models/post';
 
@@ -11,15 +12,46 @@ import { Post } from '../../models/post';
 export class PostDetailsComponent implements OnInit {
 
   post: Post | undefined
+  editing: boolean = false;
 
-  constructor(private route: ActivatedRoute, private blogService: BlogService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private blogService: BlogService,
+    public auth: AuthenticationService) { }
 
   ngOnInit(): void {
     this.getPost();
   }
 
+  get postId(): string | null {
+    return this.route.snapshot.paramMap.get('id')
+  }
+
+  enterEditMode(): void {
+    this.editing = true;
+  }
+
   getPost() {
-    const id = this.route.snapshot.paramMap.get('id');
-    return this.blogService.getPostData(id).subscribe(data => this.post = data);
+    return this.blogService.getPostData(this.postId).subscribe(data => this.post = data);
+  }
+
+  update() {
+    const formData = {
+      title: this.post?.title,
+      content: this.post?.content
+    }
+
+    this.blogService.update(this.postId!, formData);
+    this.editing = false;
+  }
+
+  delete() {
+    const confirmed = confirm('Are you sure you want to delete this post?');
+
+    if (confirmed) {
+      this.blogService.delete(this.postId as string | undefined);
+      this.router.navigate(['/blog']);
+    }
   }
 }

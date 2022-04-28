@@ -10,6 +10,7 @@
 
 .dashboard__img-container {
     max-height: 600px;
+    overflow: hidden;
 }
 
 .dashboard__uploaded-img {
