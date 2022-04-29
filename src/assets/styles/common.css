@@ -3,7 +3,7 @@
 }
 
 .button--red {
-    border: 2px solid var(--red-color);
+    border: none;
     background-color: var(--red-color); 
     color: #fff;
     transition: 200ms;

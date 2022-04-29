@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
+import { Router } from '@angular/router';
+import { GoogleAuthProvider, FacebookAuthProvider, User } from "firebase/auth";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import { GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 export class AuthenticationService {
   authState: any = null;
 
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(public afAuth: AngularFireAuth, private router: Router) {
     this.afAuth.authState.subscribe(data => this.authState = data);
   }
 
@@ -18,6 +20,10 @@ export class AuthenticationService {
 
   get currentUserId(): string {
     return this.authenticated ? this.authState.uid : null;
+  }
+
+  get currentUser$(): Observable<any> {
+    return this.afAuth.authState;
   }
 
   loginWithGoogle() {
@@ -34,7 +40,7 @@ export class AuthenticationService {
 
   async register(email: string, password: string) {
     const res = await this.afAuth.createUserWithEmailAndPassword(email, password);
-    console.log(res);
+    this.router.navigate(['home']);
   }
 
   async logout() {

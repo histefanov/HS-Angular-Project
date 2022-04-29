@@ -1,1 +1,10 @@
-<p>profile works!</p>
+<section class="profile" *ngIf="user$ | async as user">
+    <article class="profile__card">
+        <h2 class="profile__heading">User profile</h2>
+        <div class="profile__name-wrapper">
+            <div class="profile__img-wrapper">
+                <img [src]="user.photoURL" class="profile__img" alt="">
+            </div>
+        </div>
+    </article>
+</section>

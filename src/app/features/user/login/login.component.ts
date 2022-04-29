@@ -41,9 +41,11 @@ export class LoginComponent implements OnInit {
     const email = form.controls['email'].value;
     const password = form.controls['password'].value;
 
-    this.authService.loginWithEmail(email, password).then(user => {
-      this.redirect();
-    });
+    this.authService.loginWithEmail(email, password)
+      .then(user => {
+        this.redirect();
+      })
+      .catch((err) => alert("Wrong user credentials."))
   }
 
   private redirect(): void {

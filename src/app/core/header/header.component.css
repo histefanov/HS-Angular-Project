@@ -19,17 +19,10 @@
     margin-right: 3rem;
 }
 
-.header__logo > a {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 2rem;
-    color: #cacaca;
-    transition: 400ms;
+.header__logo img {
+    height: 40px;
 }
 
-.header__logo > a:hover {
-    color: var(--red-color);
-}
 
 .header__nav-list {
     display: flex;

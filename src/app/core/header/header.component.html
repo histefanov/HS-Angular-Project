@@ -1,15 +1,15 @@
 <header class="header">
     <div class="header__inner">
         <div class="header__main">
-
             <div class="header__nav">
                 <ul class="header__nav-list">
-
                     <li>
                         <ul class="header__nav-items header__nav-items--left">
                             <li class="header__nav-item">
                                 <div class="header__logo">
-                                    <a routerLink="/">-Logo-</a>
+                                    <a routerLink="/">
+                                        <img src="../../../assets/images/hs-logo.png" alt="logo">
+                                    </a>
                                 </div>
                             </li>
                             <li class="header__nav-item">
@@ -25,19 +25,6 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- <li>
-                        <ul class="header__nav-items header__nav-items--center">
-                            <li class="header__nav-item">
-                                <a routerLink="/login">Sign in</a>
-                            </li>
-                            <li class="header__nav-item">
-                                <a routerLink="/register">Register</a>
-                            </li>
-                        </ul>
-                    </li> -->
-                    <!-- <li>
-                        <div class="header__separator"></div>
-                    </li> -->
                     <li>
                         <ul class="header__nav-items header__nav-items--right">
                             <li class="header__nav-item header__nav-item--squared">
@@ -52,10 +39,15 @@
                             <li>
                                 <div class="header__separator"></div>
                             </li>
-                            <li class="header__nav-item" *ngIf="auth.afAuth.authState | async as user; else showLogin">
-                                <span class="header__greeting">Hello, User.</span>
-                                <a class="pointer" (click)="auth.logout()">Logout</a>
-                            </li>
+                            <ng-container *ngIf="auth.afAuth.authState | async as user; else showLogin">
+                                <li class="header__nav-item">
+                                    <a class="pointer" routerLink="/profile">Profile</a>
+                                </li>
+                                <li class="header__nav-item">
+                                    <a class="pointer" (click)="auth.logout()">Sign out</a>
+                                </li>
+                            </ng-container>
+
                             <ng-template #showLogin>
                                 <li class="header__nav-item">
                                     <a routerLink="/login">Sign in</a>
