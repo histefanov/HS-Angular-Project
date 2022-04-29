@@ -18,6 +18,7 @@ looking for coaching and guidance in their training journey. Our team will aim t
     * Angular v13.2.6
     * rxjs
     * Angular Material UI
+    * ngx-toastr
 * Backend:
     * Firebase
     * AngularFire
@@ -25,7 +26,7 @@ looking for coaching and guidance in their training journey. Our team will aim t
 
 ## Quick setup
 
-Download the project from the GitHub repo and run the following commands in your IDE terminal:
+Download the project from the GitHub repo, open it in your IDE and run the following commands in the terminal:
 
 ```bash
   cd hs-app
