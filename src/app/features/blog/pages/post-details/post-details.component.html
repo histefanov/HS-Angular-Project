@@ -27,13 +27,14 @@
                 </div>
                 <div class="post__content">
                     <div class="post__side-buttons post__side-buttons--left">
-                        <button mat-icon-button>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank"
+                            mat-icon-button>
                             <i class="fa-brands fa-facebook" style="color: #4267B2"></i>
-                        </button>
-                        <button mat-icon-button>
+                        </a>
+                        <a href="https://twitter.com/share?url=example.org" target="_blank" mat-icon-button>
                             <i class="fa-brands fa-twitter" style="color: #1DA1F2"></i>
-                        </button>
-                        <button mat-icon-button>
+                        </a>
+                        <button mat-icon-button (click)="copyUrl()">
                             <i class="fa-solid fa-copy"></i>
                         </button>
                     </div>
@@ -48,7 +49,7 @@
                     </div>
                     <div class="post__content-header">
                         <h3 class="post__subtitle">
-                            Shift your at-home training up a gear.
+                            {{post.subtitle}}
                         </h3>
                         <span class="post__info">
                             <span class="post__author-img">
@@ -62,7 +63,7 @@
                             &bull;
                             <span>
                                 <i class="fa-solid fa-clock"></i>
-                                2 min read
+                                {{post.readingTime}} min read
                             </span>
                         </span>
                     </div>

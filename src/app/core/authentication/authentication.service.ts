@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 import { GoogleAuthProvider, FacebookAuthProvider, UserInfo } from "firebase/auth";
 import { concatMap, from, Observable, of, tap } from 'rxjs';
 import { ProfileUser } from 'src/app/features/user/models/user';
@@ -12,7 +13,10 @@ export class AuthenticationService {
   authState: any = null;
   currentUser$: Observable<ProfileUser | null>;
 
-  constructor(public afAuth: AngularFireAuth, private router: Router) {
+  constructor(
+    public afAuth: AngularFireAuth,
+    private router: Router,
+    private toast: HotToastService) {
     this.afAuth.authState.subscribe(data => this.authState = data);
     this.currentUser$ = this.afAuth.authState as Observable<ProfileUser | null>;
   }
@@ -48,8 +52,14 @@ export class AuthenticationService {
   }
 
   async register(email: string, password: string) {
-    const res = await this.afAuth.createUserWithEmailAndPassword(email, password);
-    this.router.navigate(['home']);
+    try {
+      await this.afAuth.createUserWithEmailAndPassword(email, password);
+      this.router.navigate(['home']);
+    } catch (err) {
+      this.toast.error('A user with this email already exists.', {
+        id: 'existing-user'
+      });
+    }
   }
 
   async logout() {
@@ -65,9 +75,8 @@ export class AuthenticationService {
     try {
       const result = await this.afAuth
         .signInWithPopup(provider);
-      console.log('success!');
     } catch (error) {
-      console.log('error');
+      this.toast.error('Invalid credentials');
     }
   }
 }

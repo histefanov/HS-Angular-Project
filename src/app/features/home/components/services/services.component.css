@@ -11,18 +11,20 @@
     flex-direction: column;
     flex-basis: 25%;
     gap: 1.2rem;
-    font-family: "Raleway", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .services__subheading {
     color: var(--red-color);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.2rem;
 }
 
 .services__heading {
+    font-family: "Montserrat", sans-serif;
     font-size: 2.4rem;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .services__description {
@@ -95,18 +97,60 @@
 }
 
 .services__text {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     bottom: 1.5rem;
     left: 1rem;
     right: 1rem;
-    font-family: "Raleway", sans-serif;
     font-size: 1.2rem;
     text-transform: uppercase;
     color: #fff;
-    text-align: center;
+}
+
+.align-left {
+    align-items: flex-start;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-right {
+    align-items: flex-end;
 }
 
 .services__text span {
-    display: block;
     margin-bottom: 5px;
+}
+
+.slim {
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 1px;
+}
+
+.bold {
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.stretched {
+    letter-spacing: 4px;
+}
+
+.bg-white {
+    padding: 4px;
+    background-color: #fff;
+    color: #000;
+}
+
+.bg-black {
+    padding: 4px;
+    background-color: #000;
+    color: #fff
+}
+
+.italic {
+    font-style: italic;
 }

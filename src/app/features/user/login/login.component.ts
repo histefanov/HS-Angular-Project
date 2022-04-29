@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 
 @Component({
@@ -13,8 +14,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthenticationService,
-    private router: Router, private route:
-      ActivatedRoute) { }
+    private router: Router,
+    private route: ActivatedRoute,
+    private toast: HotToastService) { }
 
   ngOnInit(): void {
     this.authService.logout();
@@ -45,7 +47,7 @@ export class LoginComponent implements OnInit {
       .then(user => {
         this.redirect();
       })
-      .catch((err) => alert("Wrong user credentials."))
+      .catch((err) => this.toast.error('Email and password do not match'));
   }
 
   private redirect(): void {

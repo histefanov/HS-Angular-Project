@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { HotToastService } from '@ngneat/hot-toast';
 import { concatMap, Observable } from 'rxjs';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 import { ImageUploadService } from 'src/app/core/services/image-upload.service';
+import { BlogService } from '../../blog/blog.service';
+import { UserPost } from '../../blog/models/user-post';
 import { ProfileUser } from '../models/user';
 
 @Component({
@@ -11,11 +14,17 @@ import { ProfileUser } from '../models/user';
 })
 export class ProfileComponent implements OnInit {
   user$: Observable<ProfileUser | null> = this.auth.currentUser$;
+  posts: Observable<UserPost[]>;
 
-  constructor(private auth: AuthenticationService, private imageUploadService: ImageUploadService) { }
+  constructor(
+    private auth: AuthenticationService,
+    private imageUploadService: ImageUploadService,
+    private blogService: BlogService,
+    private toast: HotToastService) { }
 
   ngOnInit(): void {
-    this.user$.subscribe((data) => console.log(data));
+    this.posts = this.blogService.getUsersPosts(this.auth.currentUserId);
+    console.log(this.posts);
   }
 
   uploadImage(event: any, { uid }: ProfileUser) {
@@ -25,7 +34,20 @@ export class ProfileComponent implements OnInit {
     }
 
     this.imageUploadService.uploadImage(event.target.files[0], `avatars/${uid}`).pipe(
+      this.toast.observe({
+        loading: 'Uploading profile image...',
+        success: 'Image uploaded successfully',
+        error: 'There was an error in uploading the image',
+      }),
       concatMap((photoURL) => this.auth.UpdateProfileData({ photoURL }))
     ).subscribe();
+  }
+
+  delete(id: string | undefined) {
+    const confirmed = confirm('Are you sure you want to delete this post?');
+
+    if (confirmed) {
+      this.blogService.delete(id as string | undefined);
+    }
   }
 }

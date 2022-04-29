@@ -32,7 +32,8 @@
             "styles": [
               "src/custom-theme.scss",
               "src/styles.css",
-              "src/assets/fonts/typography.css"
+              "src/assets/fonts/typography.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },

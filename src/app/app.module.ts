@@ -17,6 +17,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
 import { UserModule } from './features/user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 @NgModule({
   declarations: [
@@ -26,17 +28,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
+    ToastrModule.forRoot({
+      preventDuplicates: true,
+      timeOut: 2000,
+      positionClass: 'toast-bottom-left'
+    }),
+    HotToastModule.forRoot(),
+    BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
     SharedModule,
     UserModule,
     HomeModule,
-    BlogModule,
+    BlogModule
   ],
   bootstrap: [AppComponent]
 })

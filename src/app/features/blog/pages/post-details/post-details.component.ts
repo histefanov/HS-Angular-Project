@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
+import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 import { BlogService } from '../../blog.service';
 import { Post } from '../../models/post';
@@ -18,7 +20,9 @@ export class PostDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private blogService: BlogService,
-    public auth: AuthenticationService) { }
+    public auth: AuthenticationService,
+    private toastr: ToastrService,
+    private toast: HotToastService) { }
 
   ngOnInit(): void {
     this.getPost();
@@ -53,5 +57,15 @@ export class PostDetailsComponent implements OnInit {
       this.blogService.delete(this.postId as string | undefined);
       this.router.navigate(['/blog']);
     }
+  }
+
+  copyUrl() {
+    navigator.clipboard.writeText(window.location.href)
+      .then(() => {
+        this.toastr.success('URL copied to clipboard!');
+      }).catch((err) => {
+        this.toastr.error('Could not copy url :(');
+      })
+
   }
 }

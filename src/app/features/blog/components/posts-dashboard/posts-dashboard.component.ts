@@ -16,7 +16,9 @@ import { Router } from '@angular/router';
 export class PostsDashboardComponent implements OnInit {
 
   title: string;
+  subtitle: string;
   image: string | null = null;
+  readingTime: string;
   content: string;
 
   btnText: string = "Create Post";
@@ -39,6 +41,8 @@ export class PostsDashboardComponent implements OnInit {
       authorId: this.authService.currentUserId,
       authorImg: this.authService.authState.photoURL,
       title: this.title,
+      subtitle: this.subtitle,
+      readingTime: this.readingTime,
       content: this.content,
       image: this.image,
       published: new Date()

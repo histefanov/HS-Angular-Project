@@ -4,9 +4,15 @@
         <!-- <img class="card__img" src="{{post.image}}" alt="{{post.title}}"> -->
     </div>
     <div class="card__content-wrapper">
-        <h3 class="card__category">
-            Training
-        </h3>
+        <div class="card__header">
+            <h3 class="card__category">
+                Training
+            </h3>
+            <span *ngIf="post.readingTime" class="card__reading-time">
+                <i class="fa-solid fa-clock"></i>
+                {{post.readingTime}} min read
+            </span>
+        </div>
         <h2 class="card__heading pointer" routerLink="/blog/{{post.id}}">{{post.title}}</h2>
     </div>
     <p class="card__author">Author: {{post.author}}</p>

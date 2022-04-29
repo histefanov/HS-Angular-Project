@@ -1,24 +1,49 @@
 <section class="profile" *ngIf="user$ | async as user">
-    <article class="profile__card">
-        <h2 class="profile__heading">User profile</h2>
-        <div class="profile__img-wrapper">
-            <img class="profile__img" width="120" height="120" class="profile__img"
-                [src]="user.photoURL ?? '../../../../assets/images/avatar_placeholderpng.png'"
-                alt="{{user.displayName}}">
-            <button class="profile__edit-btn" mat-mini-fab (click)="inputField.click()">
-                <mat-icon color="secondary">edit</mat-icon>
+    <div class="profile__card-wrapper">
+        <article class="profile__card">
+            <h2 class="profile__heading">User profile</h2>
+            <div class="profile__img-wrapper">
+                <img class="profile__img" width="120" height="120" class="profile__img"
+                    [src]="user.photoURL ?? '../../../../assets/images/avatar_placeholderpng.png'"
+                    alt="{{user.displayName}}">
+                <button class="profile__edit-btn" mat-mini-fab (click)="inputField.click()">
+                    <mat-icon color="secondary">edit</mat-icon>
+                </button>
+            </div>
+            <input #inputField type="file" hidden (change)="uploadImage($event, user)">
+            <h2>{{user.email}}</h2>
+            <mat-form-field class="editor__input">
+                <input matInput placeholder="Display name">
+            </mat-form-field>
+            <mat-form-field class="editor__input">
+                <input matInput placeholder="Content">
+            </mat-form-field>
+            <button class="editor__btn" mat-raised-button color="primary">
+                Save
             </button>
-        </div>
-        <input #inputField type="file" hidden (change)="uploadImage($event, user)">
-        <h2>{{user.email}}</h2>
-        <mat-form-field class="editor__input">
-            <input matInput placeholder="Display name">
-        </mat-form-field>
-        <mat-form-field class="editor__input">
-            <input matInput placeholder="Content">
-        </mat-form-field>
-        <button class="editor__btn" mat-raised-button color="primary">
-            Save
-        </button>
-    </article>
+            <mat-accordion class="posts">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Your blog posts
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="posts__item" *ngFor="let post of posts | async">
+                        <div class="posts__info">
+                            <span>{{post.published.toDate() | date: 'dd MMMM yyyy'}}</span>
+                            <h2>{{post.title}}</h2>
+                        </div>
+                        <div class="posts__btn-wrapper">
+                            <button mat-icon-button routerLink="/blog/{{post.id}}">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                            <button mat-icon-button (click)="delete(post.id)">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </article>
+    </div>
 </section>

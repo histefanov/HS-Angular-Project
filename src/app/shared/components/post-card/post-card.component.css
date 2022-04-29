@@ -28,11 +28,20 @@
     padding: 1rem;
 }
 
+.card__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__reading-time {
+    letter-spacing: 1px;
+    color: grey;
+}
+
 .card__category {
     color: var(--red-color);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
 }
 
 .card__heading {

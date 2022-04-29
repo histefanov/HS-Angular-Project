@@ -41,3 +41,19 @@
     background-color: var(--red-color);
     color: #fff;
 }
+
+.posts {
+    margin-top: 2rem;
+    width: 80%;
+}
+
+.posts__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.posts__info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}

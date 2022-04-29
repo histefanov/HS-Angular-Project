@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Post } from './models/post';
 import { map } from 'rxjs';
+import { UserPost } from './models/user-post';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,18 @@ export class BlogService {
       .pipe(map(actions =>
         actions.slice(0, 3).map(a => {
           const data = a.payload.doc.data() as Post;
+          const id = a.payload.doc.id;
+          return { id, ...data }
+        })));
+  }
+
+  getUsersPosts(userId: string) {
+    return this.afs.collection<UserPost>('posts', ref =>
+      ref.where('authorId', '==', userId))
+      .snapshotChanges()
+      .pipe(map(actions =>
+        actions.map(a => {
+          const data = a.payload.doc.data() as UserPost;
           const id = a.payload.doc.id;
           return { id, ...data }
         })));

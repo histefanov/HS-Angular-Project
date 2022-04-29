@@ -20,6 +20,14 @@
             </mat-form-field>
             <br>
             <mat-form-field class="dashboard__input">
+                <input matInput placeholder="Subtitle" [(ngModel)]="subtitle">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="dashboard__input">
+                <input matInput placeholder="Approx. reading time in minutes" [(ngModel)]="readingTime">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="dashboard__input">
                 <textarea matInput placeholder="Content" [(ngModel)]="content" rows="10"></textarea>
             </mat-form-field>
             <br>
