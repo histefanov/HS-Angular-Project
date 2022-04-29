@@ -3,7 +3,16 @@
 @import url("./assets/fonts/typography.css");
 @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 
-
 body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+#app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+#footer {
+    margin-top: auto;
 }

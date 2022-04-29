@@ -8,6 +8,7 @@ import { TrainersComponent } from './components/trainers/trainers.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { BlogComponent } from './components/blog/blog.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     HomeComponent

@@ -6,7 +6,20 @@
 
 .footer__heading {
     margin-bottom: 1rem;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
     color: #858585;
+}
+
+.footer__slogan {
+    font-family: 'Share Tech Mono', monospace;
+    text-transform: uppercase;
+    color: grey;
+}
+
+.footer__disclaimer {
+    font-size: 0.7rem;
 }
 
 .footer__link {
@@ -24,6 +37,9 @@
 }
 
 .footer__description {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     flex-basis: 20%;
 }
 

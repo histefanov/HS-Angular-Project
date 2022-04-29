@@ -14,9 +14,10 @@
             </h2>
         </div>
         <div class="newsletter__form-wrapper">
-            <form action="post" class="newsletter__form">
-                <input type="text" class="newsletter__input" placeholder="Email">
-                <button class="newsletter__button button--red">Sign Up</button>
+            <form #form="ngForm" class="newsletter__form" (ngSubmit)="signUp()">
+                <input type="text" name="email" id="email" class="newsletter__input" placeholder="Email"
+                    [(ngModel)]="email" required email>
+                <button class="newsletter__button button--red pointer" [disabled]="form.invalid">Sign Up</button>
             </form>
         </div>
     </div>

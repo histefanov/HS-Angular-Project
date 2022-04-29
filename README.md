@@ -19,6 +19,7 @@ looking for coaching and guidance in their training journey. Our team will aim t
     * rxjs
     * Angular Material UI
     * ngx-toastr
+    * ngneat/hot-toast
 * Backend:
     * Firebase
     * AngularFire

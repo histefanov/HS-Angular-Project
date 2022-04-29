@@ -9,7 +9,7 @@
     transition: 200ms;
 }
 
-.button--red:hover {
+.button--red:hover:enabled {
     background-color: #fff;
     color: var(--red-color);
 }

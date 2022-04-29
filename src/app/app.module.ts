@@ -19,6 +19,7 @@ import { UserModule } from './features/user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
     AngularFireAuthModule,
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
+    NgxPaginationModule,
     ToastrModule.forRoot({
       preventDuplicates: true,
       timeOut: 2000,

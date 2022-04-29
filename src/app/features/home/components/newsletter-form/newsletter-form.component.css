@@ -68,8 +68,21 @@
     padding-left: 1rem;;
 }
 
+.newsletter__input:-webkit-autofill,
+.newsletter__input:-webkit-autofill:hover,
+.newsletter__input:-webkit-autofill:focus,
+.newsletter__input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+	-webkit-text-fill-color: rgb(0, 0, 0) !important;
+}
+
 .newsletter__button {
     padding: 1rem 2rem;
     font-size: 1.2rem;
+}
+
+.newsletter__button:disabled {
+    background-color: #6e2335;
+    cursor:not-allowed;
 }
 
