@@ -18,6 +18,7 @@ looking for coaching and guidance in their training journey. Our team will aim t
     * Angular v13.2.6
     * rxjs
     * Angular Material UI
+    * ngx-toastr
 * Backend:
     * Firebase
     * AngularFire
