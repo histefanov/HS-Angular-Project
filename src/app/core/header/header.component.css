@@ -82,3 +82,13 @@
     height: 24px;
     border-right: 1px solid #3b3b3b;
 }
+
+.header__img-wrapper {
+    margin-right: -20px;
+}
+
+.header__img {
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+}

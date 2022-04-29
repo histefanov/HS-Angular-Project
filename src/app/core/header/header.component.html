@@ -41,6 +41,13 @@
                             </li>
                             <ng-container *ngIf="auth.afAuth.authState | async as user; else showLogin">
                                 <li class="header__nav-item">
+                                    <div class="header__img-wrapper">
+                                        <img class="header__img pointer" width="40" height="40" routerLink="profile"
+                                            [src]="user.photoURL ?? '../../../../assets/images/avatar_placeholderpng.png'"
+                                            alt="{{user.displayName}}">
+                                    </div>
+                                </li>
+                                <li class="header__nav-item">
                                     <a class="pointer" routerLink="/profile">Profile</a>
                                 </li>
                                 <li class="header__nav-item">

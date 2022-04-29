@@ -1,27 +1,47 @@
-# HsApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+# HS-Academy Coaching services
 
-## Development server
+HS-Academy is an Angular-based web project, which was built for academic purposes, but
+ will later on be extended to a fully functional platform for recreational or professional athletes, who are
+looking for coaching and guidance in their training journey. Our team will aim to provide the best of the following services:
+* Online coaching;
+* Nutrition councelling;
+* Custom training plans;
+* Custom diet plans;
+* 1-on-1 training sessions;
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Built using
+* Frontend:
+    * TypeScript
+    * HTML & CSS
+    * Angular v13.2.6
+    * rxjs
+    * Angular Material UI
+* Backend:
+    * Firebase
+    * AngularFire
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Quick setup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Download the project from the GitHub repo and run the following commands in your IDE terminal:
 
-## Running unit tests
+```bash
+  cd hs-app
+  npm install -g @angular/cli
+  npm install
+  ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Sign in with the built-in credentials:
+* Email: admin@hs-app.com
+* Password: adminadmin
 
-## Running end-to-end tests
+Alternatively you can sign up with a new account or log in with your google account.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    
+## Authors
 
-## Further help
+- [@histefanov](https://www.github.com/histefanov)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

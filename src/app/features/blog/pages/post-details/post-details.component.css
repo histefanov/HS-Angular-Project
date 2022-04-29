@@ -79,10 +79,17 @@
 .post__info {
     margin: 2rem 0 4rem 0;
     display: flex;
+    align-items: center;
     gap: 0.5rem;
     font-size: 1.1rem;
     letter-spacing: 1px;
     color: grey;
+}
+
+.post__info .post__author-img img {
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .post__info span:first-child {

@@ -37,6 +37,7 @@ export class PostsDashboardComponent implements OnInit {
     const data = {
       author: this.authService.authState.displayName || this.authService.authState.email,
       authorId: this.authService.currentUserId,
+      authorImg: this.authService.authState.photoURL,
       title: this.title,
       content: this.content,
       image: this.image,

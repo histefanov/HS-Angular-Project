@@ -51,6 +51,11 @@
                             Shift your at-home training up a gear.
                         </h3>
                         <span class="post__info">
+                            <span class="post__author-img">
+                                <img width="30" height="30"
+                                    [src]="post.authorImg ?? '../../../../assets/images/avatar_placeholderpng.png'"
+                                    alt="">
+                            </span>
                             <span>{{post.author}}</span>
                             &bull;
                             <span>{{post.published.toDate() | date: 'dd MMMM yyyy'}}</span>

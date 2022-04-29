@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { GoogleAuthProvider, FacebookAuthProvider, User } from "firebase/auth";
-import { Observable } from 'rxjs';
+import { GoogleAuthProvider, FacebookAuthProvider, UserInfo } from "firebase/auth";
+import { concatMap, from, Observable, of, tap } from 'rxjs';
+import { ProfileUser } from 'src/app/features/user/models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
   authState: any = null;
+  currentUser$: Observable<ProfileUser | null>;
 
   constructor(public afAuth: AngularFireAuth, private router: Router) {
     this.afAuth.authState.subscribe(data => this.authState = data);
+    this.currentUser$ = this.afAuth.authState as Observable<ProfileUser | null>;
   }
 
   get authenticated(): boolean {
@@ -20,10 +23,6 @@ export class AuthenticationService {
 
   get currentUserId(): string {
     return this.authenticated ? this.authState.uid : null;
-  }
-
-  get currentUser$(): Observable<any> {
-    return this.afAuth.authState;
   }
 
   loginWithGoogle() {
@@ -36,6 +35,16 @@ export class AuthenticationService {
 
   loginWithEmail(email: string, password: string) {
     return this.afAuth.signInWithEmailAndPassword(email, password);
+  }
+
+  async UpdateProfileData(profileData: Partial<UserInfo>) {
+    const user = await this.afAuth.currentUser;
+
+    if (!user) {
+      this.router.navigate(['login']);
+    }
+
+    return of(user?.updateProfile(profileData));
   }
 
   async register(email: string, password: string) {

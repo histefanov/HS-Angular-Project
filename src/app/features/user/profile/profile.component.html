@@ -1,10 +1,24 @@
 <section class="profile" *ngIf="user$ | async as user">
     <article class="profile__card">
         <h2 class="profile__heading">User profile</h2>
-        <div class="profile__name-wrapper">
-            <div class="profile__img-wrapper">
-                <img [src]="user.photoURL" class="profile__img" alt="">
-            </div>
+        <div class="profile__img-wrapper">
+            <img class="profile__img" width="120" height="120" class="profile__img"
+                [src]="user.photoURL ?? '../../../../assets/images/avatar_placeholderpng.png'"
+                alt="{{user.displayName}}">
+            <button class="profile__edit-btn" mat-mini-fab (click)="inputField.click()">
+                <mat-icon color="secondary">edit</mat-icon>
+            </button>
         </div>
+        <input #inputField type="file" hidden (change)="uploadImage($event, user)">
+        <h2>{{user.email}}</h2>
+        <mat-form-field class="editor__input">
+            <input matInput placeholder="Display name">
+        </mat-form-field>
+        <mat-form-field class="editor__input">
+            <input matInput placeholder="Content">
+        </mat-form-field>
+        <button class="editor__btn" mat-raised-button color="primary">
+            Save
+        </button>
     </article>
 </section>
