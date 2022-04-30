@@ -13,6 +13,7 @@ import { ProfileUser } from '../models/user';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  displayName: string;
   user$: Observable<ProfileUser | null> = this.auth.currentUser$;
   posts: Observable<UserPost[]>;
 
@@ -43,7 +44,16 @@ export class ProfileComponent implements OnInit {
     ).subscribe();
   }
 
-  delete(id: string | undefined) {
+  updateName() {
+    this.auth.UpdateProfileData({ displayName: this.displayName }).then(() => {
+      this.toast.success('You changed your display name successfully')
+      this.displayName = '';
+    }).catch(() => {
+      this.toast.error('Something went wrong.');
+    });
+  }
+
+  deletePost(id: string | undefined) {
     const confirmed = confirm('Are you sure you want to delete this post?');
 
     if (confirmed) {
