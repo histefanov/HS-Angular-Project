@@ -19,7 +19,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     SharedModule,
     FormsModule,
     BlogRoutingModule,
-    RouterModule,
+    RouterModule
   ]
 })
 export class BlogModule { }

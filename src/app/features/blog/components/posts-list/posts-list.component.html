@@ -1,5 +1,14 @@
 <section class="posts">
     <div class="posts__inner">
-        <hs-post-card *ngFor="let post of posts | async" [post]="post"></hs-post-card>
+        <div class="posts__heading">
+            <h2>Welcome to our blog</h2>
+        </div>
+        <div class="posts__cards">
+            <hs-post-card *ngFor="let post of pageSlice" [post]="post"></hs-post-card>
+        </div>
+        <div class="posts__pagination">
+            <button class="posts__btn button--light" [disabled]="pageNumber <= 1" (click)="pageDown()">Prev</button>
+            <button class="posts__btn button--light" [disabled]="disableNext" (click)="pageUp()">Next</button>
+        </div>
     </div>
 </section>

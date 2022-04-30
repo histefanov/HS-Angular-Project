@@ -21,7 +21,7 @@
     transition: 0.2s;
 }
 
-.button--dark:hover {
+.button--dark:hover:enabled {
     background-color: rgb(41, 41, 41);
 }
 
@@ -31,7 +31,7 @@
     transition: 200ms;
 }
 
-.button--light:hover {
+.button--light:hover:enabled {
     background-color: rgb(201, 201, 201);
 }
 

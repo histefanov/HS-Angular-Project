@@ -1,4 +1,5 @@
 .card {
+    max-width: 450px;
     position: relative;
     background-color: #fff;
     transition: 0.15s;
