@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 
@@ -7,9 +7,13 @@ import { AuthenticationService } from 'src/app/core/authentication/authenticatio
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
 
   constructor(private authService: AuthenticationService) { }
+
+  ngOnInit(): void {
+    this.authService.logout();
+  }
 
   registerHandler(form: NgForm): void {
     if (form.invalid) {

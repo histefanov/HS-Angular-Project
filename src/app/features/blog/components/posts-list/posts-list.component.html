@@ -3,12 +3,25 @@
         <div class="posts__heading">
             <h2>Welcome to our blog</h2>
         </div>
-        <div class="posts__cards">
+        <div *ngIf="loading" class="loading">
+            <mat-spinner></mat-spinner>
+        </div>
+        <div *ngIf="!loading" class="posts__cards">
             <hs-post-card *ngFor="let post of pageSlice" [post]="post"></hs-post-card>
         </div>
         <div class="posts__pagination">
-            <button class="posts__btn button--light" [disabled]="pageNumber <= 1" (click)="pageDown()">Prev</button>
-            <button class="posts__btn button--light" [disabled]="disableNext" (click)="pageUp()">Next</button>
+            <button class="posts__btn button--light" [disabled]="pageNumber <= 1" (click)="pageDown()">
+                <i class="fa-solid fa-chevron-left"></i>
+                Prev
+            </button>
+            <button class="posts__btn button--light" [disabled]="disableNext || loading" (click)="pageUp()">
+                Next
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="posts__dashboard-btn-wrapper">
+            <button routerLink="/blog/dashboard"
+                class="posts__btn posts__btn--dash pointer button--dark">Dashboard</button>
         </div>
     </div>
 </section>

@@ -81,21 +81,27 @@
     align-items: flex-start;
     flex-basis: 25%;
     gap: 1.2rem;
-    font-family: "Raleway", sans-serif;
     color: #fff;
 }
 
 .trainers__heading {
+    font-family: "Montserrat", sans-serif;
     font-size: 2.4rem;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .trainers__description {
     color: #cacaca;
     line-height: 1.2;
+    font-size: 1.2rem;
 }
 
 .trainers__link {
+    font-size: 1.2rem;
     padding: 1rem 2rem;
     text-align: center;
+}
+
+.trainers__link span {
+    margin-right: 0.5rem;
 }

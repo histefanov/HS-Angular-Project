@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 500px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.not-found div {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.not-found div p:first-child {
+    font-size: 5.4rem;
+}
+
+.not-found__btn {
+    margin-top: 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    padding: 1rem 2rem;
+}

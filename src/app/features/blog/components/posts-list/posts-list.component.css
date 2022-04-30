@@ -7,6 +7,7 @@
 }
 
 .posts__heading {
+    position: relative;
     font-family: "Montserrat", sans-serif;
     margin-bottom: 4rem;
     font-size: 2.6rem;
@@ -24,7 +25,7 @@
 }
 
 .posts__pagination {
-    margin: 3rem auto 0 auto;
+    margin: 4rem auto 0 auto;
     width: 200px;
     display: flex;
     justify-content: center;
@@ -32,8 +33,22 @@
 }
 
 .posts__btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     padding: 1rem 2rem;
     font-family: "Montserrat", sans-serif;
     font-size: 1.4rem;
 }
 
+.loading {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.posts__btn--dash {
+    display: block;
+
+    margin: 1rem auto 0 auto;
+}

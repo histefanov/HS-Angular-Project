@@ -21,7 +21,6 @@ export class PostDetailsComponent implements OnInit {
     private router: Router,
     private blogService: BlogService,
     public auth: AuthenticationService,
-    private toastr: ToastrService,
     private toast: HotToastService) { }
 
   ngOnInit(): void {
@@ -62,9 +61,9 @@ export class PostDetailsComponent implements OnInit {
   copyUrl() {
     navigator.clipboard.writeText(window.location.href)
       .then(() => {
-        this.toastr.success('URL copied to clipboard!');
+        this.toast.success('URL copied to clipboard!');
       }).catch((err) => {
-        this.toastr.error('Could not copy url :(');
+        this.toast.error('Could not copy url :(');
       })
 
   }

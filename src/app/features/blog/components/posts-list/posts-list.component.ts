@@ -9,18 +9,19 @@ import { Post } from '../../models/post';
   styleUrls: ['./posts-list.component.css']
 })
 export class PostsListComponent implements OnInit {
+  loading: boolean = true;
   pageNumber: number = 1;
   pageSize: number = 6;
   posts: Post[];
   pageSlice: Post[];
   disableNext: boolean = false;
 
-  constructor(private blogService: BlogService, auth: AuthenticationService) {
+  constructor(private blogService: BlogService) {
     this.blogService.getPosts().subscribe((data) => this.posts = data);
   }
 
   ngOnInit(): void {
-    setTimeout(() => (this.OnPageChange()), 1000);
+    setTimeout(() => (this.OnPageChange()), 250);
   }
 
   OnPageChange() {
@@ -33,6 +34,7 @@ export class PostsListComponent implements OnInit {
     }
 
     this.pageSlice = this.posts.slice(startIndex, endIndex);
+    this.loading = false;
   }
 
   pageUp() {

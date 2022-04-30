@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { GoogleAuthProvider, FacebookAuthProvider, UserInfo } from "firebase/auth";
-import { concatMap, from, Observable, of, tap } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ProfileUser } from 'src/app/features/user/models/user';
 
 @Injectable({

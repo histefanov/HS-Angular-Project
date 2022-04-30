@@ -24,14 +24,15 @@
             </mat-form-field>
             <br>
             <mat-form-field class="dashboard__input">
-                <input matInput placeholder="Approx. reading time in minutes" [(ngModel)]="readingTime">
+                <input type="number" matInput placeholder="Approx. reading time in minutes" [(ngModel)]="readingTime">
             </mat-form-field>
             <br>
             <mat-form-field class="dashboard__input">
                 <textarea matInput placeholder="Content" [(ngModel)]="content" rows="10"></textarea>
             </mat-form-field>
             <br>
-            <button class="dashboard__btn" mat-raised-button color="primary" [disabled]="!title || !content || !image"
+            <button class="dashboard__btn" mat-raised-button color="primary"
+                [disabled]="!title || !content || !image || !readingTime || !subtitle"
                 (click)="createPost()">{{btnText}}
             </button>
         </mat-expansion-panel>
