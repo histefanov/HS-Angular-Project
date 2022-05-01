@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
+import { Observable } from 'rxjs';
 import { BlogService } from '../../blog.service';
 import { Post } from '../../models/post';
 
@@ -9,15 +9,16 @@ import { Post } from '../../models/post';
   styleUrls: ['./posts-list.component.css']
 })
 export class PostsListComponent implements OnInit {
-  loading: boolean = true;
-  pageNumber: number = 1;
+  loading: boolean = false;
+  pageNumber: number = 0;
   pageSize: number = 6;
-  posts: Post[];
+  posts: Observable<Post[]>;
   pageSlice: Post[];
   disableNext: boolean = false;
+  startIndex: number = 0;
 
   constructor(private blogService: BlogService) {
-    this.blogService.getPosts().subscribe((data) => this.posts = data);
+    this.posts = this.blogService.getPosts();
   }
 
   ngOnInit(): void {
@@ -25,25 +26,25 @@ export class PostsListComponent implements OnInit {
   }
 
   OnPageChange() {
-    let endIndex = this.pageNumber * this.pageSize;
-    let startIndex = endIndex - this.pageSize;
+    // let endIndex = this.pageNumber * this.pageSize;
+    // let startIndex = endIndex - this.pageSize;
 
-    if (endIndex > this.posts.length) {
-      endIndex = this.posts.length;
-      this.disableNext = true;
-    }
+    // if (endIndex > this.posts.length) {
+    //   endIndex = this.posts.length;
+    //   this.disableNext = true;
+    // }
 
-    this.pageSlice = this.posts.slice(startIndex, endIndex);
-    this.loading = false;
+    // this.pageSlice = this.posts.slice(startIndex, endIndex);
+    // this.loading = false;
   }
 
   pageUp() {
-    this.pageNumber++;
+    this.startIndex = ++this.pageNumber * this.pageSize;
     this.OnPageChange();
   }
 
   pageDown() {
-    this.pageNumber--;
+    this.startIndex = --this.pageNumber * this.pageSize;
     this.disableNext = false;
     this.OnPageChange();
   }

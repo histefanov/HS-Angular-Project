@@ -13,9 +13,10 @@
             <input #inputField type="file" hidden (change)="uploadImage($event, user)">
             <h2>{{user.email}}</h2>
             <mat-form-field class="editor__input">
-                <input matInput [(ngModel)]="displayName" placeholder="{{user.displayName}}">
+                <input matInput [(ngModel)]="displayName" placeholder="{{user.displayName || 'Display name'}}">
             </mat-form-field>
-            <button class="editor__btn" mat-raised-button color="primary" (click)="updateName()">
+            <button class="editor__btn" mat-raised-button color="primary" [disabled]="!displayName"
+                (click)="updateName()">
                 Save
             </button>
             <mat-accordion class="posts">

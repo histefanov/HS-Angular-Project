@@ -16,9 +16,10 @@ export class SubscriptionService {
   addSubscription(email: string): boolean {
     this.subCollection
       .valueChanges()
+      .pipe()
       .subscribe((data) => this.subs = data);
 
-    if (this.subs.filter((s) => s.email == email).length == 0) {
+    if (this.subs && this.subs.filter((s) => s.email == email).length == 0) {
       this.subCollection.add({ email });
       return true;
     }

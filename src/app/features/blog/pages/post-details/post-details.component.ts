@@ -12,7 +12,6 @@ import { Post } from '../../models/post';
   styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent implements OnInit {
-
   post: Post | undefined
   editing: boolean = false;
 
@@ -42,7 +41,9 @@ export class PostDetailsComponent implements OnInit {
   update() {
     const formData = {
       title: this.post?.title,
-      content: this.post?.content
+      content: this.post?.content,
+      subtitle: this.post?.subtitle,
+      readingTime: this.post?.readingTime
     }
 
     this.blogService.update(this.postId!, formData);
